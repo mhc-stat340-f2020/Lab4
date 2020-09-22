@@ -1,0 +1,65 @@
+---
+title: 'R Lab: Linear Mixed-Effects Models'
+subtitle: 'STAT 340: Applied Regression'
+author: 'YOUR NAME HERE'
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+library(dplyr)
+library(nlme)
+library(lme4)
+library(mlmRev)
+data(Exam)
+```
+
+# Exam scores from inner London
+
+These data were collected on examination results from inner London schools in a study from 1993 to analyze the relationships between school type, pupil gender, and intake achievement (`normexam`). The variables are as follows:
+
+- `school`: School ID (a factor)
+- `normexam`: Normalized exam score
+- `schgend`: School gender (a factor); levels are `mixed`, `boys`, `girls`
+- `schavg`: School average of intake score
+- `vr`: Student level Verbal Reasoning (VR) score band at intake (a factor). Levels are `bottom 25%`, `mid 50%`, `top 25%`
+- `standLRT`: Standardized London Reading test (LRT) score
+- `sex`: Sex of the student - levels are `F` and `M`
+- `type`: School type - levels are `Mxd` and `Sngl`
+- `student`: Student id (within school, a factor)
+
+## Lab Objective
+
+The main objective of this lab is to study how differences between schools in examination results vary by intake achievement, by curriculum subject considered, and by school gender.
+
+### (1) Graphically examine the relationship between the normalized exam score (`normexam`) and standardized LRT (`standLRT`) by school. Do this for each school gender level, `mixed`, `boys`, and `girls`. 
+
+```{r}
+
+```
+
+### (2) Is it reasonable to assume a linear relationship between the standardized LRT and the normalized exam score?
+
+
+
+### (3) Fit a linear-mixed effects model for normalized exam score, with standardized LRT, school gender, and school average intake score as fixed effects. Include an (individual) random effect for standardized LRT to account for correlation between students in the same school. 
+
+```{r}
+
+```
+
+#### (4) Write out the model from (3) in clearly defined model notation. Then, specify the estimated model coefficients.
+
+
+
+#### (5) Interpret $\hat{\beta}_1$, the effect of `stand_LRT` on `normexam`.
+
+
+
+#### (6) Consider a centered version of the `standLRT` variable, named `cstandLRT`. Create this variable (and a variable called `mean_standLRT`) and then fit the model described in (3), using the `mean_standLRT` variable as a fixed effect and the `cstandLRT` as an (individual) random effect. Compare this model to that in (3). What changes do you observe in the model results?
+
+```{r}
+
+```
+
